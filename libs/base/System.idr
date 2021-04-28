@@ -99,6 +99,7 @@ unsetEnv var
 
 %foreign libc "system"
          "scheme:blodwen-system"
+         "node:lambda:cmd => {let result = require('child_process').spawnSync(cmd, [], {shell: true]); return result.signal == null ? -result.signal : result.status;}"
 prim__system : String -> PrimIO Int
 
 export
